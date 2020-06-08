@@ -1,5 +1,5 @@
 
-// rnb  转  $
+// rmb  转  $
 
 let rate;
 function rmbToDollar(rmb){

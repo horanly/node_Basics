@@ -5,9 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>node serve</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body>
-    <h2>首页</h2>
+    <div>
+        <input id="name" type="text" value="小明" />
+        <button onclick="submit()">搜索</button>
+    </div>
+    <ul id="ulDemo">
+    </ul>
+
+
+    <script>
+        function getList(params) {
+            $.ajax({
+                url: 'http://localhost:3000/user',
+                dataType: 'json',
+                type:'GET',
+                data: params,
+                success: function (res) {
+                    let data = res
+                    let oHtml = ''
+                    data.forEach(function(item, index){
+                        oHtml += `<li id="${item.id}">${item.name}</li>`
+                    })
+                    $('#ulDemo').html(oHtml)
+                }
+            })
+        }
+        getList({name:"jerry", age: 18})
+
+        function submit() {
+            let params = {
+                name: $('#name').val()
+            }
+            console.log(params);
+            
+            getList(params)
+        }
+    </script>
 </body>
 </html>

@@ -7,9 +7,12 @@ const fs = require('fs')
 
 // 异步读取
 fs.readFile('./public/config.js', (err, data)=>{
-    console.log(data);
+    console.log(err, data.toString());
 })
 
+// fs.writeFile('b.txt','哈哈add',function(err){
+//     console.log(err)
+// })
 
 // promise
 const {promisify} = require('util')

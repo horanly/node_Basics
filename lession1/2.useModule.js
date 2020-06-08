@@ -14,8 +14,9 @@ console.log(`内存使用率: ${mem}%`);
 const conf = require('./public/config')
 console.log(conf);
 
+// RMB 转 美元
 const {rmbToDollar} = require('./public/currency')(6)
-console.log(rmbToDollar(10));
+console.log(rmbToDollar(6));
 
 
 
