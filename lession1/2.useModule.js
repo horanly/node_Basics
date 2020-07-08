@@ -3,6 +3,10 @@ const os = require('os')
 const freemem = os.freemem()
 const totalmem = os.totalmem()
 
+console.log(os.cpus(), 'cpus');
+console.log(os.userInfo(), 'userInfo:');
+
+
 const mem = freemem / totalmem * 100
 
 console.log(`总内存: ${totalmem}`);
